@@ -5,7 +5,6 @@ import {
   Link
 } from 'react-router-dom';
 
-
 const Home = () => <h1>Home</h1>
 const About = () => <h1>About</h1>
 
@@ -15,20 +14,14 @@ const Links = () =>
       <Link to="/about">About</Link>
     </nav>
 
-class App extends React.Component {
-  render(){
-    return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Route exact path="/" component={Home}></Route>
-          <Route exact path="/about" component={About}></Route>
-        </div>
-      </Router>
-    )
-  }
-}
-
-
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Links />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+    </div>
+  </Router>
+)
 
 export default App

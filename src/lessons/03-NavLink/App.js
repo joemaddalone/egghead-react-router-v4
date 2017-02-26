@@ -17,19 +17,15 @@ const Links = () =>
       <NavLink to="/contact" isActive={isActiveFunc}  activeClassName="active">Contact</NavLink>
     </nav>
 
-class App extends React.Component {
-  render(){
-    return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Route path="/home" render={() => <h1>Home</h1>}></Route>
-          <Route path="/about" render={() => <h1>About</h1>}></Route>
-          <Route path="/contact" render={() => <h1>Contact</h1>}></Route>
-        </div>
-      </Router>
-    )
-  }
-}
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Links />
+      <Route path="/home" render={() => <h1>Home</h1>} />
+      <Route path="/about" render={() => <h1>About</h1>} />
+      <Route path="/contact" render={() => <h1>Contact</h1>} />
+    </div>
+  </Router>
+)
 
 export default App

@@ -12,19 +12,15 @@ const Links = () =>
       <Link to="/contact">Contact</Link>
     </nav>
 
-class App extends React.Component {
-  render(){
-    return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Route path="/:page" render={({match, location}) => {
-            return <h1>{match.params.page}</h1>}
-          }></Route>
-        </div>
-      </Router>
-    )
-  }
-}
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Links />
+      <Route path="/:page" render={({match, location}) => {
+        return <h1>{match.params.page}</h1>}
+      } />
+    </div>
+  </Router>
+)
 
 export default App

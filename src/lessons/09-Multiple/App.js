@@ -14,19 +14,14 @@ const Links = () =>
 
 const Header = ({match}) => <h1>{match.params.page}</h1>
 const Content = ({match}) => <p>{match.params.page} content</p>
-
-class App extends React.Component {
-  render(){
-    return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Route path="/:page" component={Header}></Route>
-          <Route path="/:page" component={Content}></Route>
-        </div>
-      </Router>
-    )
-  }
-}
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Links />
+      <Route path="/:page" component={Header} />
+      <Route path="/:page" component={Content} />
+    </div>
+  </Router>
+)
 
 export default App

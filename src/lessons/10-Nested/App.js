@@ -33,18 +33,14 @@ const Menu = ({match}) => (
   </div>
 )
 
-class App extends React.Component {
-  render(){
-    return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/menu" component={Menu}></Route>
-        </div>
-      </Router>
-    )
-  }
-}
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Links />
+      <Route exact path="/" component={Home} />
+      <Route path="/menu" component={Menu} />
+    </div>
+  </Router>
+)
 
 export default App

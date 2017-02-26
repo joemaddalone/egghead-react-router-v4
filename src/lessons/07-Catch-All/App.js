@@ -21,11 +21,11 @@ class App extends React.Component {
         <div>
           <Links />
           <Switch>
-            <Route exact path="/" render={() => <h1>Home</h1>}></Route>
-            <Route path="/about" render={() => <h1>About</h1>}></Route>
+            <Route exact path="/" render={() => <h1>Home</h1>} />
+            <Route path="/about" render={() => <h1>About</h1>} />
             <Route path="/" render={({match, location}) => {
               return <h1>404: {match.params.page} was not found</h1>}
-            }></Route>
+            } />
           </Switch>
         </div>
       </Router>

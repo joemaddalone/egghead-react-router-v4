@@ -6,7 +6,6 @@ import {
   Prompt
 } from 'react-router-dom';
 
-
 const Links = () =>
     <nav>
       <Link to="/home">Home</Link>
