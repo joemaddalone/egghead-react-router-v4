@@ -1,0 +1,1 @@
+**Rendering Multiple Components for the Same Route in React Router v4** - React Router v4 allows us to render Routes as components wherever we like in our components.  This can provide some interesting use cases for creating dynamic routes on our applications.

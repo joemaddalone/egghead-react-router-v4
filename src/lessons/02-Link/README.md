@@ -1,0 +1,1 @@
+**Use the React Router v4 Link Component for Navigation Between Routes** - If you’ve created several Routes within your application, you will also want to be able to navigate between them. React Router supplies a Link component that you will use to make this happen.

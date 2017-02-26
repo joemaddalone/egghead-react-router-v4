@@ -1,0 +1,1 @@
+**Styling a Link that is Active with NavLink in React Router 4** - We often need to be able to apply style to navigation links based on the current route. In React Router v4 you can easily accomplish this with the NavLink component.

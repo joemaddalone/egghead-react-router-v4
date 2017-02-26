@@ -4,6 +4,8 @@ import {
   Route
 } from 'react-router-dom';
 
+console.log(Route)
+
 const Home = () => <h1>Home</h1>
 
 const App = (props) => (
