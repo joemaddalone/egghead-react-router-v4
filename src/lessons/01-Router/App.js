@@ -9,7 +9,7 @@ import {
 const Home = () => <h1>Home</h1>
 
  const App = () => (
-  <Router>
+  <Router basename={props.path}>
     <div>
       <Route exact path="/" component={Home} />
       {/*<Route path="/about" render={() => <h1>About</h1>} />*/}

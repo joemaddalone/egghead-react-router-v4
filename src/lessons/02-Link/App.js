@@ -14,7 +14,7 @@ const Links = () => (
 )
 
 const App = () => (
-  <Router>
+  <Router basename={props.path}>
     <div>
       <Links />
       <Route exact path="/" render={() => <h1>Home</h1>} />
