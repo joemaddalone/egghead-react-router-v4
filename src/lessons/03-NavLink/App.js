@@ -3,29 +3,35 @@ import {
   BrowserRouter as Router,
   Route,
   NavLink
-} from 'react-router-dom';
+ } from 'react-router-dom';
 
-const isActiveFunc = ( match, location ) => {
+const isActiveFunc = (match, location) => {
   console.log(match, location)
   return match
 }
 
-const Links = () =>
-    <nav>
-      <NavLink to="/home" activeClassName="active">Home</NavLink>
-      <NavLink to="/about" activeStyle={{ fontWeight: 'bold', color: 'red' }}>About</NavLink>
-      <NavLink to="/contact" isActive={isActiveFunc}  activeClassName="active">Contact</NavLink>
-    </nav>
+const Links = () => (
+  <nav>
+    <NavLink exact activeClassName="active" to="/">Home</NavLink>
+    <NavLink activeStyle={{color: 'green'}} to="/about">About</NavLink>
+    <NavLink
+      activeClassName="active"
+      isActive={isActiveFunc}
+      to="/contact">
+      Contact
+    </NavLink>
+  </nav>
+)
 
-const App = (props) => (
-  <Router basename={props.path}>
+const App = () => (
+  <Router>
     <div>
       <Links />
-      <Route path="/home" render={() => <h1>Home</h1>} />
+      <Route exact path="/" render={() => <h1>Home</h1>} />
       <Route path="/about" render={() => <h1>About</h1>} />
       <Route path="/contact" render={() => <h1>Contact</h1>} />
     </div>
   </Router>
-)
+);
 
 export default App

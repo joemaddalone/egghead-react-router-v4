@@ -5,23 +5,23 @@ import {
   Link
 } from 'react-router-dom';
 
-const Home = () => <h1>Home</h1>
-const About = () => <h1>About</h1>
+const Links = () => (
+  <nav>
+    <Link to="/">Home</Link>
+    <Link to={{ pathname: "/about" }}>About</Link>
+    <Link replace to="/contact">Contact</Link>
+  </nav>
+)
 
-const Links = () =>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-    </nav>
-
-const App = (props) => (
-  <Router basename={props.path}>
+const App = () => (
+  <Router>
     <div>
       <Links />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
+      <Route exact path="/" render={() => <h1>Home</h1>} />
+      <Route path="/about" render={() => <h1>About</h1>} />
+      <Route path="/contact" render={() => <h1>Contact</h1>} />
     </div>
   </Router>
-)
+);
 
 export default App

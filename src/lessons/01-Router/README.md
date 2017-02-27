@@ -1,1 +1,1 @@
-**Run the React Router v4 Examples with Create React App** - React Router v4 doesn’t require a lot of configuration to run. The core examples will run out of the box with Create React App. In this lesson, you will create an application and get React Router v4 up and running.
+**Create Basic Routes with the React Router v4 BrowserRouter** - React Router 4 has several routers built in for different purposes. The primary one you will use for building web applications is the BrowserRouter. In this lesson you will import the BrowserRouter and create some basic Route components.

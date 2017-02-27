@@ -2,24 +2,22 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route
-} from 'react-router-dom';
+ } from 'react-router-dom';
 
-console.log(Route)
+ import './App.css';
 
 const Home = () => <h1>Home</h1>
 
-const App = (props) => (
-  <Router basename={props.path}>
+ const App = () => (
+  <Router>
     <div>
       <Route exact path="/" component={Home} />
-      <Route path="/about" render={() => <h1>About</h1>} />
-      <Route path="/about"
-        children={(x) => {
-          console.log(x)
-          return x.match && <p>about content</p>
-        }} />
+      {/*<Route path="/about" render={() => <h1>About</h1>} />*/}
+      <Route path="/about" children={
+        ({match}) => match && <h1>About</h1>
+      } />
     </div>
   </Router>
-)
+);
 
-export default App
+ export default App
