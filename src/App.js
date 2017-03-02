@@ -13,13 +13,14 @@ const lessons = [
   {id: '03-NavLink'},
   {id: '04-Routers'},
   {id: '05-URL-Params'},
-  {id: '06-Query-Params'},
-  {id: '07-Catch-All'},
-  {id: '08-Conditional'},
-  {id: '09-Multiple'},
-  {id: '10-Nested'},
-  {id: '11-Redirect'},
-  {id: '12-Prompt'}
+  {id: '06-URL-Regex'},
+  {id: '07-Query-Params'},
+  {id: '08-Catch-All'},
+  {id: '09-Conditional'},
+  {id: '10-Multiple'},
+  {id: '11-Nested'},
+  {id: '12-Redirect'},
+  {id: '13-Prompt'}
 ]
 
 lessons.forEach(l => l.Component =  require(`./lessons/${l.id}/App`).default)

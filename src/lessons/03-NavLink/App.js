@@ -23,7 +23,7 @@ const Links = () => (
   </nav>
 )
 
-const App = () => (
+const App = (props) => (
   <Router basename={props.path}>
     <div>
       <Links />
