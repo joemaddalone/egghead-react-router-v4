@@ -1,3 +1,5 @@
+// https://jsbin.com/yamojid
+
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -5,14 +7,12 @@ import {
   Link
 } from 'react-router-dom';
 
-const Links = () =>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/?id=123">Inline</Link>
-      <Link to={{pathname:'/', search:'id=456'}}>Object</Link>
-    </nav>
-
-const MyComponent = (props) => <h1>{props.id}</h1>
+const Links = () => (
+  <nav>
+    <Link to="/?id=123">Inline</Link>
+    <Link to={{pathname: '/', search: 'id=456'}}>Object</Link>
+  </nav>
+)
 
 const App = (props) => (
   <Router basename={props.path}>
@@ -20,12 +20,10 @@ const App = (props) => (
       <Links />
       <Route path="/" render={({match, location}) => (
         <div>
+          <p>root</p>
           <p>{JSON.stringify(match)}</p>
           <p>{JSON.stringify(location)}</p>
-          <p>{location.search}</p>
-          <MyComponent
-            id={new URLSearchParams(location.search).get('id')}
-          />
+          <p>{new URLSearchParams(location.search).get('id')}</p>
         </div>
       )} />
     </div>
@@ -33,3 +31,4 @@ const App = (props) => (
 )
 
 export default App
+

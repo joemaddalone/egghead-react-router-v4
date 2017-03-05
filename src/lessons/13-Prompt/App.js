@@ -6,43 +6,33 @@ import {
   Prompt
 } from 'react-router-dom';
 
-const Links = () =>
-    <nav>
-      <Link to="/home">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
-
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {blocking: false}
-  }
-  setBlocking(){
-    this.setState({blocking: true})
-  }
+const Home = () => (<h1>Home</h1>)
+class Form extends React.Component {
+  state = {dirty: false}
+  setDirty = () => this.setState({dirty: true})
   render(){
     return (
-      <Router basename={this.props.path}>
-        <div>
-          <Links />
-          <Prompt
-            when={this.state.blocking}
-            message='You have made changes, are you sure you want to leave?'
-          />
-          <Route path="/:page" render={
-            ({match, location}) => (
-              <input ref="input"
-                onChange={this.setBlocking.bind(this)}
-                type="text"
-                placeholder={match.params.page} />
-            )
-          }></Route>
-        </div>
-      </Router>
+      <div>
+        <h1>Form</h1>
+        <input type="text" onInput={this.setDirty}/>
+        <Prompt
+          when={this.state.dirty}
+          message="Data will be lost!"
+         />
+      </div>
     )
   }
 }
+const App = (props) => (
+  <Router basename={props.path}>
+    <div>
+      <Link to="/">Home</Link>
+      <Link to="/form">Form</Link>
+      <Route exact path="/" component={Home} />
+      <Route path="/form" component={Form} />
+    </div>
+  </Router>
+)
 
 
 
