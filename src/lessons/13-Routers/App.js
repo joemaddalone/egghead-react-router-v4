@@ -4,7 +4,6 @@ import {
   HashRouter,
   MemoryRouter,
   StaticRouter,
-  NativeRouter,
   Link,
   Route
 } from 'react-router-dom';
@@ -51,4 +50,4 @@ const StaticRouterApp = () => (
 )
 
 
-export default HashRouterApp
+export default MemoryRouterApp
